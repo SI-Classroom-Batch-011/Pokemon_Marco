@@ -1,4 +1,0 @@
-package Pokemon
-
-class Attacke {
-}
