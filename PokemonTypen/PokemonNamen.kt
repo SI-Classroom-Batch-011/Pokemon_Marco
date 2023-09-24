@@ -1,4 +1,4 @@
-package Pokemon
+package PokemonTypen
 
 enum class PokemonNamen {
 

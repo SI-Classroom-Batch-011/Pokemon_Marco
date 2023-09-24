@@ -1,14 +1,30 @@
+import Attacken.PokemonAttacke
+import Kanto.Kanto
 import Pokemon.*
-import Trainer.Trainer
+import PokemonTypen.PokemonType
+import Trainer.Boss
 
-var mewtu : Mewtu = Mewtu()
 
 
 fun main() {
+    var boss = Boss(mutableListOf(Pokemon(
+        "Mew",
+        PokemonType.PSYCHO,
+        1,
+        40,
+        30,
+        30,
+        mutableListOf(
+            PokemonAttacke.Donnerschock,
+            PokemonAttacke.Blizzard,
+            PokemonAttacke.Flammenwurf,
+            PokemonAttacke.Surfer
+        )
+    )))
+    var kanto = Kanto()
 
-    var trainer = Trainer(mutableListOf()).trainerPokemon
-    var kanto = Kanto(pokemonList.shuffled().toMutableList())
-    kanto.moveInRegion()
+    kanto.game()
+
 
 
 }

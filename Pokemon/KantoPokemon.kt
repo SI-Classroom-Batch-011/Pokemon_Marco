@@ -1,164 +1,1412 @@
 package Pokemon
 
 import Attacken.PokemonAttacke
+import PokemonTypen.PokemonType
 
-
-    var pokemonList : MutableList<Pokemon> = mutableListOf(
-    Pokemon("Bisasam", PokemonType.PFLANZE, 10, 45, 49, 49, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Absorb)),
-    Pokemon("Bisaknosp", PokemonType.PFLANZE, 32, 60, 62, 63, mutableListOf(PokemonAttacke.Tackle, )),
+// liste aller pokemon
+var pokemonList: MutableList<Pokemon> = mutableListOf(
+    Pokemon(
+        "Bisasam",
+        PokemonType.PFLANZE,
+        1,
+        45,
+        49,
+        49,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Absorb)
+    ),
+    Pokemon("Bisaknosp", PokemonType.PFLANZE, 32, 60, 62, 63, mutableListOf(PokemonAttacke.Tackle)),
     Pokemon("Bisaflor", PokemonType.PFLANZE, 32, 80, 82, 83, mutableListOf(PokemonAttacke.Tackle)),
-    Pokemon("Glumanda", PokemonType.FEUER, 10, 39, 52, 43, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut)),
-    Pokemon("Glutexo", PokemonType.FEUER, 36, 58, 64, 58, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut, PokemonAttacke.Flammenwurf)),
-    Pokemon("Glurak", PokemonType.FEUER, 36, 78, 84, 78, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut, PokemonAttacke.Flammenwurf, PokemonAttacke.Feuersturm)),
-    Pokemon("Schiggy", PokemonType.WASSER, 10, 44, 48, 65, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre)),
-    Pokemon("Schillok", PokemonType.WASSER, 36, 59, 63, 80, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre, PokemonAttacke.Hydropumpe)),
-    Pokemon("Turtok", PokemonType.WASSER, 36, 79, 83, 100, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre, PokemonAttacke.Hydropumpe, PokemonAttacke.Surfer)),
-    Pokemon("Raupy", PokemonType.KAEFER, 3, 40, 45, 35, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Fadenriss)),
-    Pokemon("Safcon", PokemonType.KAEFER, 10, 45, 30, 35, mutableListOf(PokemonAttacke.Fadenriss, PokemonAttacke.Härtner)),
-    Pokemon("Smettbo", PokemonType.KAEFER, 30, 60, 45, 50, mutableListOf(PokemonAttacke.Fadenriss, PokemonAttacke.Härtner, PokemonAttacke.Käfergebrumm)),
-    Pokemon("Hornliu", PokemonType.KAEFER, 4, 30, 35, 30, mutableListOf(PokemonAttacke.Hornattacke, PokemonAttacke.Fadenschuss)),
-    Pokemon("Kokuna", PokemonType.KAEFER, 7, 50, 25, 50, mutableListOf(PokemonAttacke.Hornattacke, PokemonAttacke.Schutzschild)),
-    Pokemon("Bibor", PokemonType.KAEFER, 10, 40, 150, 40, mutableListOf(PokemonAttacke.Hornattacke, PokemonAttacke.Blizzard)),
-    Pokemon("Taubsi", PokemonType.NORMAL, 9, 40, 45, 40, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Schnabel)),
-    Pokemon("Tauboga", PokemonType.NORMAL, 36, 55, 50, 55, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Schnabel, PokemonAttacke.Fliegen)),
-    Pokemon("Tauboss", PokemonType.NORMAL, 36, 80, 80, 75, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Schnabel, PokemonAttacke.Fliegen, PokemonAttacke.Orkan)),
-    Pokemon("Rattfratz", PokemonType.NORMAL, 4, 30, 56, 35, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Biss)),
-    Pokemon("Rattikarl", PokemonType.NORMAL, 20, 55, 81, 60, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Biss, PokemonAttacke.Hyperzahn)),
-    Pokemon("Habitak", PokemonType.NORMAL, 10, 40, 60, 30, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Ruckzuckhieb)),
-    Pokemon("Ibitak", PokemonType.NORMAL, 20, 65, 90, 65, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Flügelschlag)),
-    Pokemon("Rettan", PokemonType.NORMAL, 15, 35, 60, 44, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Biss)),
-    Pokemon("Arbok", PokemonType.GIFT, 35, 60, 85, 69, mutableListOf(PokemonAttacke.Biss, PokemonAttacke.Giftpuder)),
-    Pokemon("Pikachu", PokemonType.ELEKTRO, 10, 35, 55, 40, mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Ruckzuckhieb)),
-    Pokemon("Raichu", PokemonType.ELEKTRO, 20, 60, 90, 55, mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Donnerblitz)),
-    Pokemon("Sandan", PokemonType.BODEN, 10, 50, 75, 85, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler)),
-    Pokemon("Sandamer", PokemonType.BODEN, 22, 75, 100, 110, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler, PokemonAttacke.Erdbeben)),
-    Pokemon("Nidoran♀", PokemonType.GIFT, 16, 55, 47, 52, mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke)),
-    Pokemon("Nidorina", PokemonType.GIFT, 35, 70, 62, 67, mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke, PokemonAttacke.Toxin)),
-    Pokemon("Nidoqueen", PokemonType.GIFT, 35, 90, 92, 87, mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke, PokemonAttacke.Toxin, PokemonAttacke.Erdbeben)),
-    Pokemon("Nidoran♂", PokemonType.GIFT, 16, 46, 57, 40, mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke)),
-    Pokemon("Nidorino", PokemonType.GIFT, 35, 61, 72, 57, mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke, PokemonAttacke.Toxin)),
-    Pokemon("Nidoking", PokemonType.GIFT, 35, 81, 102, 77, mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke, PokemonAttacke.Toxin, PokemonAttacke.Erdbeben)),
-    Pokemon("Piepi", PokemonType.FEE, 18, 70, 45, 48, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Silberblick)),
-    Pokemon("Pixi", PokemonType.FEE, 32, 95, 70, 73, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Silberblick, PokemonAttacke.Mondschein)),
-    Pokemon("Vulpix", PokemonType.FEUER, 10, 38, 41, 40, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut)),
-    Pokemon("Vulnona", PokemonType.FEUER, 10, 73, 76, 75, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut, PokemonAttacke.Feuerwirbel)),
-    Pokemon("Pummeluff", PokemonType.NORMAL, 12, 115, 45, 20, mutableListOf(PokemonAttacke.Gesang, PokemonAttacke.Kratzer)),
-    Pokemon("Knuddeluff", PokemonType.NORMAL, 12, 140, 70, 45, mutableListOf(PokemonAttacke.Gesang, PokemonAttacke.Kratzer, PokemonAttacke.Bodycheck)),
-    Pokemon("Zubat", PokemonType.GIFT, 6, 40, 45, 35, mutableListOf(PokemonAttacke.Leckerbissen, PokemonAttacke.Supersonic)),
-    Pokemon("Golbat", PokemonType.GIFT, 16, 75, 80, 70, mutableListOf(PokemonAttacke.Leckerbissen, PokemonAttacke.Supersonic, PokemonAttacke.Flügelschlag)),
-    Pokemon("Myrapla", PokemonType.PFLANZE, 6, 45, 50, 55, mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure)),
-    Pokemon("Duflor", PokemonType.PFLANZE, 21, 60, 65, 70, mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)),
-    Pokemon("Giflor", PokemonType.PFLANZE, 42, 75, 80, 85, mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)),
-    Pokemon("Paras", PokemonType.KAEFER, 10, 35, 70, 55, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Pilzspore)),
-    Pokemon("Parasek", PokemonType.KAEFER, 24, 60, 95, 80, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Pilzspore, PokemonAttacke.Schlafpuder)),
-    Pokemon("Bluzuk", PokemonType.GIFT, 8, 40, 50, 40, mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure)),
-    Pokemon("Omot", PokemonType.GIFT, 18, 65, 65, 65, mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)),
-    Pokemon("Digda", PokemonType.BODEN, 4, 10, 55, 25, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler)),
-    Pokemon("Digdri", PokemonType.BODEN, 18, 35, 80, 50, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler, PokemonAttacke.Erdbeben)),
+    Pokemon(
+        "Glumanda",
+        PokemonType.FEUER,
+        1,
+        39,
+        52,
+        43,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut)
+    ),
+    Pokemon(
+        "Glutexo",
+        PokemonType.FEUER,
+        1,
+        58,
+        64,
+        58,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut, PokemonAttacke.Flammenwurf)
+    ),
+    Pokemon(
+        "Glurak",
+        PokemonType.FEUER,
+        1,
+        78,
+        84,
+        78,
+        mutableListOf(
+            PokemonAttacke.Kratzer,
+            PokemonAttacke.Glut,
+            PokemonAttacke.Flammenwurf,
+            PokemonAttacke.Feuersturm
+        )
+    ),
+    Pokemon(
+        "Schiggy",
+        PokemonType.WASSER,
+        1,
+        44,
+        48,
+        65,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre)
+    ),
+    Pokemon(
+        "Schillok",
+        PokemonType.WASSER,
+        1,
+        59,
+        63,
+        80,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre, PokemonAttacke.Hydropumpe)
+    ),
+    Pokemon(
+        "Turtok",
+        PokemonType.WASSER,
+        1,
+        79,
+        83,
+        100,
+        mutableListOf(
+            PokemonAttacke.Tackle,
+            PokemonAttacke.Aquaknarre,
+            PokemonAttacke.Hydropumpe,
+            PokemonAttacke.Surfer
+        )
+    ),
+    Pokemon(
+        "Raupy",
+        PokemonType.KAEFER,
+        1,
+        40,
+        45,
+        35,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Fadenriss)
+    ),
+    Pokemon(
+        "Safcon",
+        PokemonType.KAEFER,
+        1,
+        45,
+        30,
+        35,
+        mutableListOf(PokemonAttacke.Fadenriss, PokemonAttacke.Härtner)
+    ),
+    Pokemon(
+        "Smettbo",
+        PokemonType.KAEFER,
+        1,
+        60,
+        45,
+        50,
+        mutableListOf(PokemonAttacke.Fadenriss, PokemonAttacke.Härtner, PokemonAttacke.Käfergebrumm)
+    ),
+    Pokemon(
+        "Hornliu",
+        PokemonType.KAEFER,
+        1,
+        30,
+        35,
+        30,
+        mutableListOf(PokemonAttacke.Hornattacke, PokemonAttacke.Fadenschuss)
+    ),
+    Pokemon(
+        "Kokuna",
+        PokemonType.KAEFER,
+        1,
+        50,
+        25,
+        50,
+        mutableListOf(PokemonAttacke.Hornattacke, PokemonAttacke.Schutzschild)
+    ),
+    Pokemon(
+        "Bibor",
+        PokemonType.KAEFER,
+        1,
+        40,
+        150,
+        40,
+        mutableListOf(PokemonAttacke.Hornattacke, PokemonAttacke.Blizzard)
+    ),
+    Pokemon(
+        "Taubsi",
+        PokemonType.NORMAL,
+        1,
+        40,
+        45,
+        40,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Schnabel)
+    ),
+    Pokemon(
+        "Tauboga",
+        PokemonType.NORMAL,
+        1,
+        55,
+        50,
+        55,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Schnabel, PokemonAttacke.Fliegen)
+    ),
+    Pokemon(
+        "Tauboss",
+        PokemonType.NORMAL,
+        1,
+        80,
+        80,
+        75,
+        mutableListOf(
+            PokemonAttacke.Ruckzuckhieb,
+            PokemonAttacke.Schnabel,
+            PokemonAttacke.Fliegen,
+            PokemonAttacke.Orkan
+        )
+    ),
+    Pokemon(
+        "Rattfratz",
+        PokemonType.NORMAL,
+        1,
+        30,
+        56,
+        35,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Biss)
+    ),
+    Pokemon(
+        "Rattikarl",
+        PokemonType.NORMAL,
+        1,
+        55,
+        81,
+        60,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Biss, PokemonAttacke.Hyperzahn)
+    ),
+    Pokemon(
+        "Habitak",
+        PokemonType.NORMAL,
+        1,
+        40,
+        60,
+        30,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Ruckzuckhieb)
+    ),
+    Pokemon(
+        "Ibitak",
+        PokemonType.NORMAL,
+        1,
+        65,
+        90,
+        65,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Flügelschlag)
+    ),
+    Pokemon(
+        "Rettan",
+        PokemonType.NORMAL,
+        1,
+        35,
+        60,
+        44,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Biss)
+    ),
+    Pokemon(
+        "Arbok",
+        PokemonType.GIFT,
+        1,
+        60,
+        85,
+        69,
+        mutableListOf(PokemonAttacke.Biss, PokemonAttacke.Giftpuder)
+    ),
+    Pokemon(
+        "Pikachu",
+        PokemonType.ELEKTRO,
+        1,
+        35,
+        55,
+        40,
+        mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Ruckzuckhieb)
+    ),
+    Pokemon(
+        "Raichu",
+        PokemonType.ELEKTRO,
+        1,
+        60,
+        90,
+        55,
+        mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Donnerblitz)
+    ),
+    Pokemon(
+        "Sandan",
+        PokemonType.BODEN,
+        1,
+        50,
+        75,
+        85,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler)
+    ),
+    Pokemon(
+        "Sandamer",
+        PokemonType.BODEN,
+        1,
+        75,
+        100,
+        110,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler, PokemonAttacke.Erdbeben)
+    ),
+    Pokemon(
+        "Nidoran♀",
+        PokemonType.GIFT,
+        1,
+        55,
+        47,
+        52,
+        mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke)
+    ),
+    Pokemon(
+        "Nidorina",
+        PokemonType.GIFT,
+        1,
+        70,
+        62,
+        67,
+        mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke, PokemonAttacke.Toxin)
+    ),
+    Pokemon(
+        "Nidoqueen",
+        PokemonType.GIFT, 36,
+        90,
+        92,
+        87,
+        mutableListOf(
+            PokemonAttacke.Giftstachel,
+            PokemonAttacke.Hornattacke,
+            PokemonAttacke.Toxin,
+            PokemonAttacke.Erdbeben
+        )
+    ),
+    Pokemon(
+        "Nidoran♂",
+        PokemonType.GIFT,
+        16,
+        46,
+        57,
+        40,
+        mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke)
+    ),
+    Pokemon(
+        "Nidorino",
+        PokemonType.GIFT,
+        35,
+        61,
+        72,
+        57,
+        mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke, PokemonAttacke.Toxin)
+    ),
+    Pokemon(
+        "Nidoking",
+        PokemonType.GIFT,
+        35,
+        81,
+        102,
+        77,
+        mutableListOf(
+            PokemonAttacke.Giftstachel,
+            PokemonAttacke.Hornattacke,
+            PokemonAttacke.Toxin,
+            PokemonAttacke.Erdbeben
+        )
+    ),
+    Pokemon(
+        "Piepi",
+        PokemonType.FEE,
+        18,
+        70,
+        45,
+        48,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Silberblick)
+    ),
+    Pokemon(
+        "Pixi",
+        PokemonType.FEE,
+        32,
+        95,
+        70,
+        73,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Silberblick, PokemonAttacke.Mondschein)
+    ),
+    Pokemon(
+        "Vulpix",
+        PokemonType.FEUER,
+        1,
+        38,
+        41,
+        40,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut)
+    ),
+    Pokemon(
+        "Vulnona",
+        PokemonType.FEUER,
+        1,
+        73,
+        76,
+        75,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut, PokemonAttacke.Feuerwirbel)
+    ),
+    Pokemon(
+        "Pummeluff",
+        PokemonType.NORMAL,
+        12,
+        115,
+        45,
+        1,
+        mutableListOf(PokemonAttacke.Gesang, PokemonAttacke.Kratzer)
+    ),
+    Pokemon(
+        "Knuddeluff",
+        PokemonType.NORMAL,
+        12,
+        140,
+        70,
+        45,
+        mutableListOf(PokemonAttacke.Gesang, PokemonAttacke.Kratzer, PokemonAttacke.Bodycheck)
+    ),
+    Pokemon(
+        "Zubat",
+        PokemonType.GIFT,
+        6,
+        40,
+        45,
+        35,
+        mutableListOf(PokemonAttacke.Leckerbissen, PokemonAttacke.Supersonic)
+    ),
+    Pokemon(
+        "Golbat",
+        PokemonType.GIFT,
+        16,
+        75,
+        80,
+        70,
+        mutableListOf(PokemonAttacke.Leckerbissen, PokemonAttacke.Supersonic, PokemonAttacke.Flügelschlag)
+    ),
+    Pokemon(
+        "Myrapla",
+        PokemonType.PFLANZE,
+        6,
+        45,
+        50,
+        55,
+        mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure)
+    ),
+    Pokemon(
+        "Duflor",
+        PokemonType.PFLANZE,
+        21,
+        60,
+        65,
+        70,
+        mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)
+    ),
+    Pokemon(
+        "Giflor",
+        PokemonType.PFLANZE,
+        42,
+        75,
+        80,
+        85,
+        mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)
+    ),
+    Pokemon(
+        "Paras",
+        PokemonType.KAEFER,
+        1,
+        35,
+        70,
+        55,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Pilzspore)
+    ),
+    Pokemon(
+        "Parasek",
+        PokemonType.KAEFER,
+        24,
+        60,
+        95,
+        80,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Pilzspore, PokemonAttacke.Schlafpuder)
+    ),
+    Pokemon(
+        "Bluzuk",
+        PokemonType.GIFT,
+        8,
+        40,
+        50,
+        40,
+        mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure)
+    ),
+    Pokemon(
+        "Omot",
+        PokemonType.GIFT,
+        18,
+        65,
+        65,
+        65,
+        mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)
+    ),
+    Pokemon(
+        "Digda",
+        PokemonType.BODEN,
+        4,
+        1,
+        55,
+        25,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler)
+    ),
+    Pokemon(
+        "Digdri",
+        PokemonType.BODEN,
+        18,
+        35,
+        80,
+        50,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler, PokemonAttacke.Erdbeben)
+    ),
     Pokemon("Mauzi", PokemonType.NORMAL, 4, 40, 45, 35, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Biss)),
-    Pokemon("Snobilikat", PokemonType.NORMAL, 14, 65, 70, 60, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Biss, PokemonAttacke.Hyperzahn)),
-    Pokemon("Enton", PokemonType.WASSER, 4, 50, 52, 48, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Wasserkanone)),
-    Pokemon("Entoron", PokemonType.WASSER, 18, 80, 82, 78, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Wasserkanone, PokemonAttacke.Surfer)),
-    Pokemon("Menki", PokemonType.KAMPF, 10, 40, 80, 35, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag)),
-    Pokemon("Rasaff", PokemonType.KAMPF, 28, 65, 105, 60, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag, PokemonAttacke.Tiefschlag)),
-    Pokemon("Fukano", PokemonType.FEUER, 12, 55, 70, 45, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Glut)),
-    Pokemon("Arkani", PokemonType.FEUER, 36, 90, 110, 80, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Flammenwurf, PokemonAttacke.Feuersturm)),
-    Pokemon("Quapsel", PokemonType.WASSER, 16, 50, 40, 40, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre)),
-    Pokemon("Quaputzi", PokemonType.WASSER, 36, 65, 65, 65, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre, PokemonAttacke. Hydropumpe)),
-    Pokemon("Quappo", PokemonType.WASSER, 36, 80, 85, 95, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre, PokemonAttacke. Hydropumpe, PokemonAttacke.Surfer)),
-    Pokemon("Abra", PokemonType.PSYCHO, 16, 25, 20, 15, mutableListOf(PokemonAttacke.Teleport)),
-    Pokemon("Kadabra", PokemonType.PSYCHO, 36, 40, 35, 30, mutableListOf(PokemonAttacke.Teleport, PokemonAttacke.Konfusion)),
-    Pokemon("Simsala", PokemonType.PSYCHO, 16, 55, 50, 45, mutableListOf(PokemonAttacke.Teleport, PokemonAttacke.Konfusion, PokemonAttacke.Psychokinese)),
-    Pokemon("Machollo", PokemonType.KAMPF, 28, 70, 80, 50, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag)),
-    Pokemon("Maschock", PokemonType.KAMPF, 36, 80, 100, 70, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag, PokemonAttacke.Tiefschlag)),
-    Pokemon("Machomei", PokemonType.KAMPF, 40, 90, 130, 80, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag, PokemonAttacke.Tiefschlag, PokemonAttacke.Wuchtschlag)),
-    Pokemon("Knofensa", PokemonType.PFLANZE, 21, 45, 50, 55, mutableListOf(PokemonAttacke.Rankenhieb, PokemonAttacke.Säure)),
-    Pokemon("Ultrigaria", PokemonType.PFLANZE, 36, 60, 65, 70, mutableListOf(PokemonAttacke.Rankenhieb, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)),
-    Pokemon("Sarzenia", PokemonType.PFLANZE, 48, 75, 100, 85, mutableListOf(PokemonAttacke.Rankenhieb, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)),
-    Pokemon("Tentacha", PokemonType.WASSER, 30, 40, 50, 100, mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Giftstachel)),
-    Pokemon("Tentoxa", PokemonType.WASSER, 36, 80, 70, 120, mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Giftstachel, PokemonAttacke. Hydropumpe)),
-    Pokemon("Kleinstein", PokemonType.GESTEIN, 40, 40, 80, 100, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner)),
-    Pokemon("Georok", PokemonType.GESTEIN, 40, 55, 95, 115, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner, PokemonAttacke.Steinhagel)),
-    Pokemon("Geowaz", PokemonType.GESTEIN, 40, 80, 120, 130, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner, PokemonAttacke.Steinhagel, PokemonAttacke.Erdbeben)),
-    Pokemon("Ponita", PokemonType.FEUER, 10, 50, 85, 55, mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuersturm)),
-    Pokemon("Gallopa", PokemonType.FEUER, 40, 65, 100, 70, mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuersturm, PokemonAttacke.Flammenwurf)),
-    Pokemon("Flegmon", PokemonType.WASSER, 31, 50, 75, 40, mutableListOf(PokemonAttacke.Aquaknarre, PokemonAttacke. Hydropumpe)),
-    Pokemon("Lahmus", PokemonType.WASSER, 32, 80, 100, 70, mutableListOf(PokemonAttacke.Aquaknarre, PokemonAttacke. Hydropumpe, PokemonAttacke.Surfer)),
-    Pokemon("Magnetilo", PokemonType.ELEKTRO, 30, 25, 35, 70, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Supersonic)),
-    Pokemon("Magneton", PokemonType.ELEKTRO, 30, 50, 60, 95, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Supersonic, PokemonAttacke.Donnerwelle)),
-    Pokemon("Porenta", PokemonType.NORMAL, 20, 40, 65, 95, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Spiegeltrick)),
-    Pokemon("Dodu", PokemonType.NORMAL, 14, 35, 85, 45, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Tackle)),
-    Pokemon("Dodri", PokemonType.NORMAL, 34, 60, 110, 70, mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Tackle, PokemonAttacke.Triplette)),
+    Pokemon(
+        "Snobilikat",
+        PokemonType.NORMAL,
+        14,
+        65,
+        70,
+        60,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Biss, PokemonAttacke.Hyperzahn)
+    ),
+    Pokemon(
+        "Enton",
+        PokemonType.WASSER,
+        4,
+        50,
+        52,
+        48,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Wasserkanone)
+    ),
+    Pokemon(
+        "Entoron",
+        PokemonType.WASSER,
+        18,
+        80,
+        82,
+        78,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Wasserkanone, PokemonAttacke.Surfer)
+    ),
+    Pokemon(
+        "Menki",
+        PokemonType.KAMPF,
+        1,
+        40,
+        80,
+        35,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag)
+    ),
+    Pokemon(
+        "Rasaff",
+        PokemonType.KAMPF,
+        28,
+        65,
+        105,
+        60,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag, PokemonAttacke.Tiefschlag)
+    ),
+    Pokemon(
+        "Fukano",
+        PokemonType.FEUER,
+        12,
+        55,
+        70,
+        45,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Glut)
+    ),
+    Pokemon(
+        "Arkani",
+        PokemonType.FEUER,
+        36,
+        90,
+        110,
+        80,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Flammenwurf, PokemonAttacke.Feuersturm)
+    ),
+    Pokemon(
+        "Quapsel",
+        PokemonType.WASSER,
+        16,
+        50,
+        40,
+        40,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre)
+    ),
+    Pokemon(
+        "Quaputzi",
+        PokemonType.WASSER,
+        36,
+        65,
+        65,
+        65,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre, PokemonAttacke.Hydropumpe)
+    ),
+    Pokemon(
+        "Quappo",
+        PokemonType.WASSER,
+        36,
+        80,
+        85,
+        95,
+        mutableListOf(
+            PokemonAttacke.Tackle,
+            PokemonAttacke.Aquaknarre,
+            PokemonAttacke.Hydropumpe,
+            PokemonAttacke.Surfer
+        )
+    ),
+    Pokemon("Abra", PokemonType.PSYCHO, 16, 25, 1, 15, mutableListOf(PokemonAttacke.Teleport)),
+    Pokemon(
+        "Kadabra",
+        PokemonType.PSYCHO,
+        36,
+        40,
+        35,
+        30,
+        mutableListOf(PokemonAttacke.Teleport, PokemonAttacke.Konfusion)
+    ),
+    Pokemon(
+        "Simsala",
+        PokemonType.PSYCHO,
+        16,
+        55,
+        50,
+        45,
+        mutableListOf(PokemonAttacke.Teleport, PokemonAttacke.Konfusion, PokemonAttacke.Psychokinese)
+    ),
+    Pokemon(
+        "Machollo",
+        PokemonType.KAMPF,
+        28,
+        70,
+        80,
+        50,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag)
+    ),
+    Pokemon(
+        "Maschock",
+        PokemonType.KAMPF,
+        36,
+        80,
+        100,
+        70,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag, PokemonAttacke.Tiefschlag)
+    ),
+    Pokemon(
+        "Machomei",
+        PokemonType.KAMPF,
+        40,
+        90,
+        130,
+        80,
+        mutableListOf(
+            PokemonAttacke.Kratzer,
+            PokemonAttacke.Karateschlag,
+            PokemonAttacke.Tiefschlag,
+            PokemonAttacke.Wuchtschlag
+        )
+    ),
+    Pokemon(
+        "Knofensa",
+        PokemonType.PFLANZE,
+        21,
+        45,
+        50,
+        55,
+        mutableListOf(PokemonAttacke.Rankenhieb, PokemonAttacke.Säure)
+    ),
+    Pokemon(
+        "Ultrigaria",
+        PokemonType.PFLANZE,
+        36,
+        60,
+        65,
+        70,
+        mutableListOf(PokemonAttacke.Rankenhieb, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)
+    ),
+    Pokemon(
+        "Sarzenia",
+        PokemonType.PFLANZE,
+        48,
+        75,
+        100,
+        85,
+        mutableListOf(PokemonAttacke.Rankenhieb, PokemonAttacke.Säure, PokemonAttacke.Schlafpuder)
+    ),
+    Pokemon(
+        "Tentacha",
+        PokemonType.WASSER,
+        30,
+        40,
+        50,
+        100,
+        mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Giftstachel)
+    ),
+    Pokemon(
+        "Tentoxa",
+        PokemonType.WASSER,
+        36,
+        80,
+        70,
+        120,
+        mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Giftstachel, PokemonAttacke.Hydropumpe)
+    ),
+    Pokemon(
+        "Kleinstein",
+        PokemonType.GESTEIN,
+        40,
+        40,
+        80,
+        100,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner)
+    ),
+    Pokemon(
+        "Georok",
+        PokemonType.GESTEIN,
+        40,
+        55,
+        95,
+        115,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner, PokemonAttacke.Steinhagel)
+    ),
+    Pokemon(
+        "Geowaz",
+        PokemonType.GESTEIN,
+        40,
+        80,
+        120,
+        130,
+        mutableListOf(
+            PokemonAttacke.Tackle,
+            PokemonAttacke.Härtner,
+            PokemonAttacke.Steinhagel,
+            PokemonAttacke.Erdbeben
+        )
+    ),
+    Pokemon(
+        "Ponita",
+        PokemonType.FEUER,
+        1,
+        50,
+        85,
+        55,
+        mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuersturm)
+    ),
+    Pokemon(
+        "Gallopa",
+        PokemonType.FEUER,
+        40,
+        65,
+        100,
+        70,
+        mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuersturm, PokemonAttacke.Flammenwurf)
+    ),
+    Pokemon(
+        "Flegmon",
+        PokemonType.WASSER,
+        31,
+        50,
+        75,
+        40,
+        mutableListOf(PokemonAttacke.Aquaknarre, PokemonAttacke.Hydropumpe)
+    ),
+    Pokemon(
+        "Lahmus",
+        PokemonType.WASSER,
+        32,
+        80,
+        100,
+        70,
+        mutableListOf(PokemonAttacke.Aquaknarre, PokemonAttacke.Hydropumpe, PokemonAttacke.Surfer)
+    ),
+    Pokemon(
+        "Magnetilo",
+        PokemonType.ELEKTRO,
+        30,
+        25,
+        35,
+        70,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Supersonic)
+    ),
+    Pokemon(
+        "Magneton",
+        PokemonType.ELEKTRO,
+        30,
+        50,
+        60,
+        95,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Supersonic, PokemonAttacke.Donnerwelle)
+    ),
+    Pokemon(
+        "Porenta",
+        PokemonType.NORMAL,
+        1,
+        40,
+        65,
+        95,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Spiegeltrick)
+    ),
+    Pokemon(
+        "Dodu",
+        PokemonType.NORMAL,
+        14,
+        35,
+        85,
+        45,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Tackle)
+    ),
+    Pokemon(
+        "Dodri",
+        PokemonType.NORMAL,
+        34,
+        60,
+        110,
+        70,
+        mutableListOf(PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Tackle, PokemonAttacke.Triplette)
+    ),
     Pokemon("Jurob", PokemonType.WASSER, 15, 35, 40, 100, mutableListOf(PokemonAttacke.Aquaknarre)),
-    Pokemon("Jugong", PokemonType.WASSER, 38, 90, 65, 180, mutableListOf(PokemonAttacke.Aquaknarre, PokemonAttacke.Eisspeer)),
-    Pokemon("Sleima", PokemonType.GIFT, 30, 40, 65, 100, mutableListOf(PokemonAttacke.Schlamm, PokemonAttacke.Minimize)),
-    Pokemon("Sleimok", PokemonType.GIFT, 38, 65, 100, 120, mutableListOf(PokemonAttacke.Schlamm, PokemonAttacke.Minimize, PokemonAttacke.Toxin)),
-    Pokemon("Muschas", PokemonType.WASSER, 20, 30, 45, 55, mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke. Hydropumpe)),
-    Pokemon("Austos", PokemonType.WASSER, 40, 60, 85, 75, mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke. Hydropumpe, PokemonAttacke.Blizzard)),
-    Pokemon("Nebulak", PokemonType.GEIST, 25, 45, 50, 45, mutableListOf(PokemonAttacke.Hypnose, PokemonAttacke.Traumfresser)),
-    Pokemon("Alpollo", PokemonType.GEIST, 38, 60, 65, 60, mutableListOf(PokemonAttacke.Hypnose, PokemonAttacke.Traumfresser, PokemonAttacke.Konfustrahl)),
-    Pokemon("Gengar", PokemonType.GEIST, 45, 60, 65, 60, mutableListOf(PokemonAttacke.Hypnose, PokemonAttacke.Traumfresser, PokemonAttacke.Konfustrahl, PokemonAttacke.Toxin)),
-    Pokemon("Onix", PokemonType.GESTEIN, 35, 35, 45, 160, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Biss)),
+    Pokemon(
+        "Jugong",
+        PokemonType.WASSER,
+        38,
+        90,
+        65,
+        180,
+        mutableListOf(PokemonAttacke.Aquaknarre, PokemonAttacke.Eisspeer)
+    ),
+    Pokemon(
+        "Sleima",
+        PokemonType.GIFT,
+        30,
+        40,
+        65,
+        100,
+        mutableListOf(PokemonAttacke.Schlamm, PokemonAttacke.Minimize)
+    ),
+    Pokemon(
+        "Sleimok",
+        PokemonType.GIFT,
+        38,
+        65,
+        100,
+        120,
+        mutableListOf(PokemonAttacke.Schlamm, PokemonAttacke.Minimize, PokemonAttacke.Toxin)
+    ),
+    Pokemon(
+        "Muschas",
+        PokemonType.WASSER,
+        1,
+        30,
+        45,
+        55,
+        mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Hydropumpe)
+    ),
+    Pokemon(
+        "Austos",
+        PokemonType.WASSER,
+        40,
+        60,
+        85,
+        75,
+        mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Hydropumpe, PokemonAttacke.Blizzard)
+    ),
+    Pokemon(
+        "Nebulak",
+        PokemonType.GEIST,
+        25,
+        45,
+        50,
+        45,
+        mutableListOf(PokemonAttacke.Hypnose, PokemonAttacke.Traumfresser)
+    ),
+    Pokemon(
+        "Alpollo",
+        PokemonType.GEIST,
+        38,
+        60,
+        65,
+        60,
+        mutableListOf(PokemonAttacke.Hypnose, PokemonAttacke.Traumfresser, PokemonAttacke.Konfustrahl)
+    ),
+    Pokemon(
+        "Gengar",
+        PokemonType.GEIST,
+        45,
+        60,
+        65,
+        60,
+        mutableListOf(
+            PokemonAttacke.Hypnose,
+            PokemonAttacke.Traumfresser,
+            PokemonAttacke.Konfustrahl,
+            PokemonAttacke.Toxin
+        )
+    ),
+    Pokemon(
+        "Onix",
+        PokemonType.GESTEIN,
+        35,
+        35,
+        45,
+        160,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Biss)
+    ),
     Pokemon("Traumato", PokemonType.PSYCHO, 16, 55, 50, 45, mutableListOf(PokemonAttacke.Konfusion)),
-    Pokemon("Hypno", PokemonType.PSYCHO, 32, 85, 73, 70, mutableListOf(PokemonAttacke.Konfusion, PokemonAttacke.Psychokinese, PokemonAttacke.Hypnose)),
-    Pokemon("Krabby", PokemonType.WASSER, 20, 30, 105, 90, mutableListOf(PokemonAttacke.Blubber, PokemonAttacke.Aquaknarre)),
-    Pokemon("Kingler", PokemonType.WASSER, 40, 55, 130, 115, mutableListOf(PokemonAttacke.Blubber, PokemonAttacke.Aquaknarre, PokemonAttacke.Eiszahn)),
-    Pokemon("Voltobal", PokemonType.ELEKTRO, 30, 40, 30, 50, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Donnerschock)),
-    Pokemon("Lektroball", PokemonType.ELEKTRO, 30, 60, 50, 70, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Donnerschock, PokemonAttacke.Donnerwelle)),
-    Pokemon("Owei", PokemonType.PFLANZE, 28, 45, 25, 50, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner)),
-    Pokemon("Kokowei", PokemonType.PFLANZE, 40, 95, 80, 85, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner)),
-    Pokemon("Tragosso", PokemonType.GESTEIN, 30, 50, 65, 107, mutableListOf(PokemonAttacke.Konfusion, PokemonAttacke.Felswurf)),
-    Pokemon("Knogga", PokemonType.BODEN, 40, 60, 80, 110, mutableListOf(PokemonAttacke.Knirscher, PokemonAttacke.Knochenkeule)),
+    Pokemon(
+        "Hypno",
+        PokemonType.PSYCHO,
+        32,
+        85,
+        73,
+        70,
+        mutableListOf(PokemonAttacke.Konfusion, PokemonAttacke.Psychokinese, PokemonAttacke.Hypnose)
+    ),
+    Pokemon(
+        "Krabby",
+        PokemonType.WASSER,
+        1,
+        30,
+        105,
+        90,
+        mutableListOf(PokemonAttacke.Blubber, PokemonAttacke.Aquaknarre)
+    ),
+    Pokemon(
+        "Kingler",
+        PokemonType.WASSER,
+        40,
+        55,
+        130,
+        115,
+        mutableListOf(PokemonAttacke.Blubber, PokemonAttacke.Aquaknarre, PokemonAttacke.Eiszahn)
+    ),
+    Pokemon(
+        "Voltobal",
+        PokemonType.ELEKTRO,
+        30,
+        40,
+        30,
+        50,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Donnerschock)
+    ),
+    Pokemon(
+        "Lektroball",
+        PokemonType.ELEKTRO,
+        30,
+        60,
+        50,
+        70,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Donnerschock, PokemonAttacke.Donnerwelle)
+    ),
+    Pokemon(
+        "Owei",
+        PokemonType.PFLANZE,
+        28,
+        45,
+        25,
+        50,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner)
+    ),
+    Pokemon(
+        "Kokowei",
+        PokemonType.PFLANZE,
+        40,
+        95,
+        80,
+        85,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Härtner)
+    ),
+    Pokemon(
+        "Tragosso",
+        PokemonType.GESTEIN,
+        30,
+        50,
+        65,
+        107,
+        mutableListOf(PokemonAttacke.Konfusion, PokemonAttacke.Felswurf)
+    ),
+    Pokemon(
+        "Knogga",
+        PokemonType.BODEN,
+        40,
+        60,
+        80,
+        110,
+        mutableListOf(PokemonAttacke.Knirscher, PokemonAttacke.Knochenkeule)
+    ),
     Pokemon("Kicklee", PokemonType.KAMPF, 28, 50, 120, 53, mutableListOf(PokemonAttacke.Kratzer)),
-    Pokemon("Nockchan", PokemonType.KAMPF, 28, 50, 105, 79, mutableListOf(PokemonAttacke.Karateschlag, PokemonAttacke.Feuerschlag, PokemonAttacke.Donnerschlag)),
-    Pokemon("Schlurp", PokemonType.NORMAL, 30, 48, 55, 45, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Hieb, PokemonAttacke.Biss, PokemonAttacke.Schnarcher)),
-    Pokemon("Smogon", PokemonType.GIFT, 35, 40, 65, 95, mutableListOf(PokemonAttacke.Giftwolke, PokemonAttacke.Smog, PokemonAttacke.Schlammwoge, PokemonAttacke.Toxin)),
-    Pokemon("Smogmog", PokemonType.GIFT, 35, 65, 90, 120, mutableListOf(PokemonAttacke.Giftwolke, PokemonAttacke.Smog, PokemonAttacke.Schlammwoge, PokemonAttacke.Toxin)),
-    Pokemon("Rihorn", PokemonType.BODEN, 20, 80, 85, 95, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Hornattacke)),
-    Pokemon("Rizeros", PokemonType.BODEN, 40, 105, 130, 120, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Hornattacke, PokemonAttacke.Felswurf)),
-    Pokemon("Chaneira", PokemonType.NORMAL, 25, 250, 5, 5, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Heilung)),
-    Pokemon("Tangela", PokemonType.PFLANZE, 30, 65, 55, 115, mutableListOf(PokemonAttacke.Rankenhieb, PokemonAttacke.Giftpuder)),
-    Pokemon("Kangama", PokemonType.NORMAL, 30, 105, 95, 80, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Biss, PokemonAttacke.Tritt)),
-    Pokemon("Seeper", PokemonType.GIFT, 12, 35, 40, 70, mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure)),
-    Pokemon("Seemon", PokemonType.GIFT, 32, 65, 75, 100, mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure, PokemonAttacke.Surfer)),
-    Pokemon("Goldini", PokemonType.WASSER, 33, 45, 67, 60, mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Hornattacke)),
-    Pokemon("Golking", PokemonType.WASSER, 33, 80, 92, 65, mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Hornattacke, PokemonAttacke. Hydropumpe)),
-    Pokemon("Sterndu", PokemonType.WASSER, 30, 30, 45, 55, mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Wasserkanone)),
-    Pokemon("Starmie", PokemonType.WASSER, 30, 60, 75, 85, mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Wasserkanone, PokemonAttacke.Surfer)),
-    Pokemon("Pantimos", PokemonType.NORMAL, 30, 40, 45, 65, mutableListOf(PokemonAttacke.Konfusion, PokemonAttacke.Mimikry, PokemonAttacke.Psychokinese)),
-    Pokemon("Sichlor", PokemonType.KAEFER, 24, 70, 110, 80, mutableListOf(PokemonAttacke.Windschnitt, PokemonAttacke.Kratzer, PokemonAttacke.Tiefschlag)),
-    Pokemon("Rossana", PokemonType.NORMAL, 30, 65, 60, 75, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Schnabel, PokemonAttacke.Gesang, PokemonAttacke.Flügelschlag)),
-    Pokemon("Elektek", PokemonType.ELEKTRO, 30, 65, 83, 57, mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Donnerblitz, PokemonAttacke.Donnerwelle)),
-    Pokemon("Magmar", PokemonType.FEUER, 30, 65, 95, 57, mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuerwirbel, PokemonAttacke.Donnerpunch)),
-    Pokemon("Pinsir", PokemonType.KAEFER, 40, 65, 125, 100, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Karateschlag, PokemonAttacke.Tiefschlag, PokemonAttacke.Kreuzhieb)),
-    Pokemon("Tauros", PokemonType.NORMAL, 30, 75, 100, 95, mutableListOf(PokemonAttacke.Hornattacke, PokemonAttacke.Kreuzhieb, PokemonAttacke.Tritt, PokemonAttacke.Wutanfall)),
-    Pokemon("Karpador", PokemonType.WASSER, 5, 20, 10, 55, mutableListOf(PokemonAttacke.Platscher)),
-    Pokemon("Garados", PokemonType.WASSER, 20, 95, 125, 79, mutableListOf(PokemonAttacke.Platscher, PokemonAttacke. Hydropumpe, PokemonAttacke.Surfer, PokemonAttacke.Drachenwut)),
-    Pokemon("Lapras", PokemonType.WASSER, 44, 130, 85, 95, mutableListOf(PokemonAttacke.Gesang, PokemonAttacke.Wasserkanone, PokemonAttacke.Surfer, PokemonAttacke.Eisstrahl)),
+    Pokemon(
+        "Nockchan",
+        PokemonType.KAMPF,
+        28,
+        50,
+        105,
+        79,
+        mutableListOf(PokemonAttacke.Karateschlag, PokemonAttacke.Feuerschlag, PokemonAttacke.Donnerschlag)
+    ),
+    Pokemon(
+        "Schlurp",
+        PokemonType.NORMAL,
+        30,
+        48,
+        55,
+        45,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Hieb, PokemonAttacke.Biss, PokemonAttacke.Schnarcher)
+    ),
+    Pokemon(
+        "Smogon",
+        PokemonType.GIFT,
+        35,
+        40,
+        65,
+        95,
+        mutableListOf(
+            PokemonAttacke.Giftwolke,
+            PokemonAttacke.Smog,
+            PokemonAttacke.Schlammwoge,
+            PokemonAttacke.Toxin
+        )
+    ),
+    Pokemon(
+        "Smogmog",
+        PokemonType.GIFT,
+        35,
+        65,
+        90,
+        120,
+        mutableListOf(
+            PokemonAttacke.Giftwolke,
+            PokemonAttacke.Smog,
+            PokemonAttacke.Schlammwoge,
+            PokemonAttacke.Toxin
+        )
+    ),
+    Pokemon(
+        "Rihorn",
+        PokemonType.BODEN,
+        1,
+        80,
+        85,
+        95,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Hornattacke)
+    ),
+    Pokemon(
+        "Rizeros",
+        PokemonType.BODEN,
+        40,
+        105,
+        130,
+        120,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Hornattacke, PokemonAttacke.Felswurf)
+    ),
+    Pokemon(
+        "Chaneira",
+        PokemonType.NORMAL,
+        25,
+        250,
+        5,
+        5,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Heilung)
+    ),
+    Pokemon(
+        "Tangela",
+        PokemonType.PFLANZE,
+        30,
+        65,
+        55,
+        115,
+        mutableListOf(PokemonAttacke.Rankenhieb, PokemonAttacke.Giftpuder)
+    ),
+    Pokemon(
+        "Kangama",
+        PokemonType.NORMAL,
+        30,
+        105,
+        95,
+        80,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Biss, PokemonAttacke.Tritt)
+    ),
+    Pokemon(
+        "Seeper",
+        PokemonType.GIFT,
+        12,
+        35,
+        40,
+        70,
+        mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure)
+    ),
+    Pokemon(
+        "Seemon",
+        PokemonType.GIFT,
+        32,
+        65,
+        75,
+        100,
+        mutableListOf(PokemonAttacke.Giftpuder, PokemonAttacke.Säure, PokemonAttacke.Surfer)
+    ),
+    Pokemon(
+        "Goldini",
+        PokemonType.WASSER,
+        33,
+        45,
+        67,
+        60,
+        mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Hornattacke)
+    ),
+    Pokemon(
+        "Golking",
+        PokemonType.WASSER,
+        33,
+        80,
+        92,
+        65,
+        mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Hornattacke, PokemonAttacke.Hydropumpe)
+    ),
+    Pokemon(
+        "Sterndu",
+        PokemonType.WASSER,
+        30,
+        30,
+        45,
+        55,
+        mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Wasserkanone)
+    ),
+    Pokemon(
+        "Starmie",
+        PokemonType.WASSER,
+        30,
+        60,
+        75,
+        85,
+        mutableListOf(PokemonAttacke.Supersonic, PokemonAttacke.Wasserkanone, PokemonAttacke.Surfer)
+    ),
+    Pokemon(
+        "Pantimos",
+        PokemonType.NORMAL,
+        30,
+        40,
+        45,
+        65,
+        mutableListOf(PokemonAttacke.Konfusion, PokemonAttacke.Mimikry, PokemonAttacke.Psychokinese)
+    ),
+    Pokemon(
+        "Sichlor",
+        PokemonType.KAEFER,
+        24,
+        70,
+        110,
+        80,
+        mutableListOf(PokemonAttacke.Windschnitt, PokemonAttacke.Kratzer, PokemonAttacke.Tiefschlag)
+    ),
+    Pokemon(
+        "Rossana",
+        PokemonType.NORMAL,
+        30,
+        65,
+        60,
+        75,
+        mutableListOf(
+            PokemonAttacke.Tackle,
+            PokemonAttacke.Schnabel,
+            PokemonAttacke.Gesang,
+            PokemonAttacke.Flügelschlag
+        )
+    ),
+    Pokemon(
+        "Elektek",
+        PokemonType.ELEKTRO,
+        30,
+        65,
+        83,
+        57,
+        mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Donnerblitz, PokemonAttacke.Donnerwelle)
+    ),
+    Pokemon(
+        "Magmar",
+        PokemonType.FEUER,
+        30,
+        65,
+        95,
+        57,
+        mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuerwirbel, PokemonAttacke.Donnerpunch)
+    ),
+    Pokemon(
+        "Pinsir",
+        PokemonType.KAEFER,
+        40,
+        65,
+        125,
+        100,
+        mutableListOf(
+            PokemonAttacke.Kratzer,
+            PokemonAttacke.Karateschlag,
+            PokemonAttacke.Tiefschlag,
+            PokemonAttacke.Kreuzhieb
+        )
+    ),
+    Pokemon(
+        "Tauros",
+        PokemonType.NORMAL,
+        30,
+        75,
+        100,
+        95,
+        mutableListOf(
+            PokemonAttacke.Hornattacke,
+            PokemonAttacke.Kreuzhieb,
+            PokemonAttacke.Tritt,
+            PokemonAttacke.Wutanfall
+        )
+    ),
+    Pokemon("Karpador", PokemonType.WASSER, 5, 1, 1, 55, mutableListOf(PokemonAttacke.Platscher)),
+    Pokemon(
+        "Garados",
+        PokemonType.WASSER,
+        1,
+        95,
+        125,
+        79,
+        mutableListOf(
+            PokemonAttacke.Platscher,
+            PokemonAttacke.Hydropumpe,
+            PokemonAttacke.Surfer,
+            PokemonAttacke.Drachenwut
+        )
+    ),
+    Pokemon(
+        "Lapras",
+        PokemonType.WASSER,
+        44,
+        130,
+        85,
+        95,
+        mutableListOf(
+            PokemonAttacke.Gesang,
+            PokemonAttacke.Wasserkanone,
+            PokemonAttacke.Surfer,
+            PokemonAttacke.Eisstrahl
+        )
+    ),
     Pokemon("Ditto", PokemonType.NORMAL, 48, 48, 48, 48, mutableListOf(PokemonAttacke.Wandel)),
-    Pokemon("Evoli", PokemonType.NORMAL, 20, 55, 55, 50, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Sandwirbel)),
-    Pokemon("Aquana", PokemonType.WASSER, 45, 130, 65, 60, mutableListOf(PokemonAttacke.Aquaknarre, PokemonAttacke.Blubbstrahl, PokemonAttacke.Surfer)),
-    Pokemon("Blitza", PokemonType.ELEKTRO, 45, 65, 130, 60, mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Donnerblitz, PokemonAttacke.Donnerwelle)),
-    Pokemon("Flamara", PokemonType.FEUER, 45, 65, 60, 130, mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuerwirbel, PokemonAttacke.Flammenwurf)),
+    Pokemon(
+        "Evoli",
+        PokemonType.NORMAL,
+        1,
+        55,
+        55,
+        50,
+        mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Sandwirbel)
+    ),
+    Pokemon(
+        "Aquana",
+        PokemonType.WASSER,
+        45,
+        130,
+        65,
+        60,
+        mutableListOf(PokemonAttacke.Aquaknarre, PokemonAttacke.Blubbstrahl, PokemonAttacke.Surfer)
+    ),
+    Pokemon(
+        "Blitza",
+        PokemonType.ELEKTRO,
+        45,
+        65,
+        130,
+        60,
+        mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Donnerblitz, PokemonAttacke.Donnerwelle)
+    ),
+    Pokemon(
+        "Flamara",
+        PokemonType.FEUER,
+        45,
+        65,
+        60,
+        130,
+        mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuerwirbel, PokemonAttacke.Flammenwurf)
+    ),
     Pokemon("Porygon", PokemonType.NORMAL, 22, 65, 60, 70, mutableListOf(PokemonAttacke.Triplette)),
-    Pokemon("Amonitas", PokemonType.GESTEIN, 40, 35, 40, 100, mutableListOf(PokemonAttacke.Wasserkanone, PokemonAttacke.Eisstrahl, PokemonAttacke.Blizzard)),
-    Pokemon("Amoroso", PokemonType.GESTEIN, 40, 70, 60, 125, mutableListOf(PokemonAttacke.Wasserkanone, PokemonAttacke.Eisstrahl, PokemonAttacke.Blizzard)),
-    Pokemon("Kabuto", PokemonType.GESTEIN, 40, 30, 80, 55, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Abgangsbund, PokemonAttacke.Wasserpulse)),
-    Pokemon("Kabutops", PokemonType.GESTEIN, 40, 60, 115, 65, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Abgangsbund, PokemonAttacke.Wasserpulse, PokemonAttacke.Steinhagel)),
-    Pokemon("Aerodactyl", PokemonType.GESTEIN, 40, 80, 105, 65, mutableListOf(PokemonAttacke.Biss, PokemonAttacke.Windschnitt, PokemonAttacke.Supersonic, PokemonAttacke.Agilität)),
-    Pokemon("Relaxo", PokemonType.NORMAL, 30, 160, 110, 65, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Amnesie, PokemonAttacke.Bodycheck, PokemonAttacke.Gesang)),
-    Pokemon("Arktos", PokemonType.EIS, 50, 90, 85, 100, mutableListOf(PokemonAttacke.Eisstrahl, PokemonAttacke.Blizzard, PokemonAttacke.Flügelschlag)),
-    Pokemon("Zapdos", PokemonType.ELEKTRO, 50, 90, 90, 85, mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Donnerblitz, PokemonAttacke.Donnerwelle, PokemonAttacke.Agilität)),
-    Pokemon("Lavados", PokemonType.FEUER, 50, 90, 100, 90, mutableListOf(PokemonAttacke.Glut, PokemonAttacke.Feuerwirbel, PokemonAttacke.Flammenwurf, PokemonAttacke.Flügelschlag)),
-    Pokemon("Dratini", PokemonType.DRACHE, 35, 41, 64, 45, mutableListOf(PokemonAttacke.Donnerwelle, PokemonAttacke.Ruckzuckhieb)),
-    Pokemon("Dragonir", PokemonType.DRACHE, 55, 61, 84, 65, mutableListOf(PokemonAttacke.Donnerwelle, PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Donner)),
-    Pokemon("Dragoran", PokemonType.DRACHE, 55, 91, 134, 95, mutableListOf(PokemonAttacke.Donnerwelle, PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Donner, PokemonAttacke.Wutanfall)),
-    Pokemon("Mewtu", PokemonType.PSYCHO, 70, 106, 110, 90, mutableListOf(PokemonAttacke.Konfusion, PokemonAttacke.Psychokinese, PokemonAttacke.Psychoschock, PokemonAttacke.Barriere)),
-    Pokemon("Mew", PokemonType.PSYCHO, 100, 100, 100, 100, mutableListOf(PokemonAttacke.Donnerschock, PokemonAttacke.Blizzard, PokemonAttacke.Flammenwurf, PokemonAttacke.Surfer))
-
-
+    Pokemon(
+        "Amonitas",
+        PokemonType.GESTEIN,
+        40,
+        35,
+        40,
+        100,
+        mutableListOf(PokemonAttacke.Wasserkanone, PokemonAttacke.Eisstrahl, PokemonAttacke.Blizzard)
+    ),
+    Pokemon(
+        "Amoroso",
+        PokemonType.GESTEIN,
+        40,
+        70,
+        60,
+        125,
+        mutableListOf(PokemonAttacke.Wasserkanone, PokemonAttacke.Eisstrahl, PokemonAttacke.Blizzard)
+    ),
+    Pokemon(
+        "Kabuto",
+        PokemonType.GESTEIN,
+        40,
+        30,
+        80,
+        55,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Abgangsbund, PokemonAttacke.Wasserpulse)
+    ),
+    Pokemon(
+        "Kabutops",
+        PokemonType.GESTEIN,
+        40,
+        60,
+        115,
+        65,
+        mutableListOf(
+            PokemonAttacke.Kratzer,
+            PokemonAttacke.Abgangsbund,
+            PokemonAttacke.Wasserpulse,
+            PokemonAttacke.Steinhagel
+        )
+    ),
+    Pokemon(
+        "Aerodactyl",
+        PokemonType.GESTEIN,
+        40,
+        80,
+        105,
+        65,
+        mutableListOf(
+            PokemonAttacke.Biss,
+            PokemonAttacke.Windschnitt,
+            PokemonAttacke.Supersonic,
+            PokemonAttacke.Agilität
+        )
+    ),
+    Pokemon(
+        "Relaxo",
+        PokemonType.NORMAL,
+        30,
+        160,
+        110,
+        65,
+        mutableListOf(
+            PokemonAttacke.Kratzer,
+            PokemonAttacke.Amnesie,
+            PokemonAttacke.Bodycheck,
+            PokemonAttacke.Gesang
+        )
+    ),
+    Pokemon(
+        "Arktos",
+        PokemonType.EIS,
+        50,
+        90,
+        85,
+        100,
+        mutableListOf(PokemonAttacke.Eisstrahl, PokemonAttacke.Blizzard, PokemonAttacke.Flügelschlag)
+    ),
+    Pokemon(
+        "Zapdos",
+        PokemonType.ELEKTRO,
+        50,
+        90,
+        90,
+        85,
+        mutableListOf(
+            PokemonAttacke.Donnerschock,
+            PokemonAttacke.Donnerblitz,
+            PokemonAttacke.Donnerwelle,
+            PokemonAttacke.Agilität
+        )
+    ),
+    Pokemon(
+        "Lavados",
+        PokemonType.FEUER,
+        50,
+        90,
+        100,
+        90,
+        mutableListOf(
+            PokemonAttacke.Glut,
+            PokemonAttacke.Feuerwirbel,
+            PokemonAttacke.Flammenwurf,
+            PokemonAttacke.Flügelschlag
+        )
+    ),
+    Pokemon(
+        "Dratini",
+        PokemonType.DRACHE,
+        35,
+        41,
+        64,
+        45,
+        mutableListOf(PokemonAttacke.Donnerwelle, PokemonAttacke.Ruckzuckhieb)
+    ),
+    Pokemon(
+        "Dragonir",
+        PokemonType.DRACHE,
+        55,
+        61,
+        84,
+        65,
+        mutableListOf(PokemonAttacke.Donnerwelle, PokemonAttacke.Ruckzuckhieb, PokemonAttacke.Donner)
+    ),
+    Pokemon(
+        "Dragoran",
+        PokemonType.DRACHE,
+        1,
+        91,
+        134,
+        95,
+        mutableListOf(
+            PokemonAttacke.Donnerwelle,
+            PokemonAttacke.Ruckzuckhieb,
+            PokemonAttacke.Donner,
+            PokemonAttacke.Wutanfall
+        )
+    ),
+    Pokemon(
+        "Mewtu",
+        PokemonType.PSYCHO,
+        1,
+        106,
+        110,
+        90,
+        mutableListOf(
+            PokemonAttacke.Konfusion,
+            PokemonAttacke.Psychokinese,
+            PokemonAttacke.Psychoschock,
+            PokemonAttacke.Barriere
+        )
+    ),
+    Pokemon(
+        "Mew",
+        PokemonType.PSYCHO,
+        1,
+        40,
+        30,
+        30,
+        mutableListOf(
+            PokemonAttacke.Donnerschock,
+            PokemonAttacke.Blizzard,
+            PokemonAttacke.Flammenwurf,
+            PokemonAttacke.Surfer
+        )
     )
 
-    fun getPokemonByLevelRange(minLevel: Int, maxLevel: Int): List<Pokemon> {
-        return pokemonList.filter { it.lvl in minLevel..maxLevel }
+
+)
+
+fun getPokemonByLevelRange(minLevel: Int, maxLevel: Int): List<Pokemon> {
+    return pokemonList.filter { it.lvl in minLevel..maxLevel }
 }

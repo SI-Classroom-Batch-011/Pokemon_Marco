@@ -1,6 +1,6 @@
 package Attacken
 
-import Pokemon.PokemonType
+import PokemonTypen.PokemonType
 
 
 enum class PokemonAttacke(val schaden: Int, val typ: PokemonType, val heilung: Boolean = false, val heilungWert: Int = 0) {
