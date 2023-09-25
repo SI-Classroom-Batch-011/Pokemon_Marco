@@ -1,7 +1,6 @@
 package Trainer
 
 import Attacken.PokemonAttacke
-import Kanto.trainerPokemon
 import Pokemon.Pokemon
 import Pokemon.pokemonList
 

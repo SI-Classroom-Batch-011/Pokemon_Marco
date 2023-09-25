@@ -6,49 +6,68 @@ import Pokemon.pokemonList
 import PokemonTypen.PokemonType
 
 private var glumanda =
-    Pokemon("Glumanda", PokemonType.FEUER, 99, 39, 52, 43, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut))
+    Pokemon(
+        "Glumanda",
+        PokemonType.FEUER,
+        99,
+        100,
+        100,
+        100,
+        mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Glut)
+    )
 private var shiggy = Pokemon(
     "Schiggy", PokemonType.WASSER, 10, 44, 48, 65, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Aquaknarre)
 )
 private var bisasam =
     Pokemon("Bisasam", PokemonType.PFLANZE, 10, 45, 49, 49, mutableListOf(PokemonAttacke.Tackle, PokemonAttacke.Absorb))
- var trainerPokemon = mutableListOf<Pokemon>()
+private var trainerPokemon = mutableListOf<Pokemon>()
 private var continueGame = true
 
 // Die welt in dem sich alles abspielen wird
 class Kanto() {
 
     // Funktioniert muss noch schöner gemacht werden
-   open fun pokemonAuswahl() {
+    fun pokemonAuswahl() {
+        var validInput = false
+        var starterPokemon = mutableListOf<Pokemon>(glumanda, shiggy, bisasam)
+
         printLetterByLetter("Willkommen in der Pokemon Welt ")
+
         println()
-        printLetterByLetter("Um in der Welt der Pokemon etwas zu errreichen musst du dir erst ein Starterpokemon aussuchen du hast die Auswahl zwischen : ")
+        printLetterByLetter("Um in der Welt der Pokemon etwas zu erreichen musst du dir erst ein Starterpokemon aussuchen du hast die Auswahl zwischen : ")
         println()
-        try {
-            var starterPokemon = mutableListOf<Pokemon>(glumanda, shiggy, bisasam)
 
-            for (pokemon in starterPokemon) {
-                println(pokemon)
-                Thread.sleep(1000)
+
+
+
+        for (pokemon in starterPokemon) {
+            println(pokemon)
+            Thread.sleep(1000)
+        }
+        while (!validInput) {
+            try {
+                printLetterByLetter("1 für : ${glumanda.name}\n2 für : ${shiggy.name}\n3 für :${bisasam.name}")
+                println()
+                Thread.sleep(500)
+
+
+                println("Wähle ein Pokemon aus gebe eine Zahl von 1 bis 3 ein: ")
+
+                var input = readln().toInt()
+
+                when (input) {
+                    1 -> trainerPokemon.add(starterPokemon[input - 1])
+                    2 -> trainerPokemon.add(starterPokemon[input - 1])
+                    3 -> trainerPokemon.add(starterPokemon[input - 1])
+
+
+                }
+                return printLetterByLetter("Du hast dich für ${starterPokemon[input - 1].name} entschieden")
+
+            } catch (e: Exception) {
+                println("Falsche Eingabe Versuche es nochmal")
+                validInput = false
             }
-            printLetterByLetter("1 für : ${glumanda.name}\n2 für : ${shiggy.name}\n3 für :${bisasam.name}")
-            println()
-            printLetterByLetter("Wähle ein Pokemon aus gebe eine Zahl von 1-3 ein: ")
-
-            var input = readln().toInt()
-
-            when (input) {
-                1 -> trainerPokemon.add(starterPokemon[input - 1])
-                2 -> trainerPokemon.add(starterPokemon[input - 1])
-                3 -> trainerPokemon.add(starterPokemon[input - 1])
-
-
-            }
-            return printLetterByLetter("Du hast dich für ${starterPokemon[input - 1].name} entschieden")
-
-        } catch (e: Exception) {
-            println("Falsche Eingabe Versuche es nochmal")
-            pokemonAuswahl()
         }
     }
 
@@ -59,65 +78,83 @@ class Kanto() {
         println()
         trainerPokemon.forEach { playerPokemon ->
             printLetterByLetter("${playerPokemon.name}, Level: ${playerPokemon.lvl}, HP: ${playerPokemon.hp}")
-            while (playerPokemon.hp > 0) {
-                pokemonList.shuffled().forEach { wildePokemon ->
-                    println()
-                    printLetterByLetter("Ein wildes ${wildePokemon.name}, Level: ${wildePokemon.lvl} ist aufgetaucht!")
-                    println()
-                    printLetterByLetter("Kampf zwischen ${playerPokemon.name} und Wildem ${wildePokemon.name}!")
+            pokemonList.shuffled().forEach { wildePokemon ->
+                println()
+                printLetterByLetter("Ein wildes ${wildePokemon.name}, Level: ${wildePokemon.lvl} ist aufgetaucht!")
+                println()
+                printLetterByLetter("Kampf zwischen ${playerPokemon.name} und Wildem ${wildePokemon.name}!")
+                while (playerPokemon.hp > 0 && wildePokemon.hp > 0) {
 
                     while (playerPokemon.hp > 0 && wildePokemon.hp > 0) {
-                       println()
-                        printLetterByLetter("${wildePokemon.name}\nHP: ${wildePokemon.hp}")
-                       println()
-                        printLetterByLetter("${playerPokemon.name}\nHP: ${playerPokemon.hp}")
                         println()
-                        printLetterByLetter("1. Attacke 2. Fliehen\n3. Items 4. Pokemon:")
-                        try {
-                            when (readln().toInt()) {
-                                1 -> {
-                                    printLetterByLetter("Whähle eine Attacke aus")
-                                    println(playerPokemon.attacke)
-                                    when (readln().toInt()) {
-                                        1 -> {
-                                            var playerAttack = playerPokemon.attacke[0]
-                                            val damage = schaden(playerPokemon, wildePokemon, playerAttack)
-                                            println()
-                                            printLetterByLetter("${playerPokemon.name} setzt $playerAttack ein und fügt $damage Schaden zu!")
-                                            wildePokemon.hp -= damage
-                                        }
+                        printLetterByLetter("${wildePokemon.name}\nHP: ${wildePokemon.hp}")
+                        println()
+                        printLetterByLetter("${playerPokemon.name}\nHP: ${playerPokemon.hp} ${playerPokemon.lvl}")
+                        println()
+                        println("1. Attacke 2. Fliehen\n3. Items 4. Pokemon:")
 
-                                        2 -> {
-                                            var playerAttack = playerPokemon.attacke[1]
-                                            val damage = schaden(playerPokemon, wildePokemon, playerAttack)
-                                            println()
-                                            printLetterByLetter("${playerPokemon.name} setzt $playerAttack ein und fügt $damage Schaden zu!")
-                                            wildePokemon.hp -= damage
-                                        }
+                        var validInput = false
 
-                                        else -> {println()
-                                            printLetterByLetter("Ungültige Eingabe! Bitte eine Zahl zwischen 1 und 2 eingeben")
-                                        kampfWildePokemon()
+                        while (!validInput) {
+                            try {
+                                when (readln().toInt()) {
+                                    1 -> {
+                                        printLetterByLetter("Whähle eine Attacke aus")
+                                        println(playerPokemon.attacke)
+                                        when (readln().toInt()) {
+                                            1 -> {
+                                                var playerAttack = playerPokemon.attacke[0]
+                                                val damage = schaden(playerPokemon, wildePokemon, playerAttack)
+                                                println()
+                                                printLetterByLetter("${playerPokemon.name} setzt $playerAttack ein und fügt $damage Schaden zu!")
+                                                wildePokemon.hp -= damage
+                                                validInput= true
+                                            }
+
+                                            2 -> {
+                                                var playerAttack = playerPokemon.attacke[1]
+                                                val damage = schaden(playerPokemon, wildePokemon, playerAttack)
+                                                println()
+                                                printLetterByLetter("${playerPokemon.name} setzt $playerAttack ein und fügt $damage Schaden zu!")
+                                                wildePokemon.hp -= damage
+                                                validInput = true
+                                            }
+
+
+                                            else -> {
+                                                println()
+                                                println("Ungültige Eingabe! Bitte eine Zahl eingeben")
+                                                println("1. Attacke 2. Fliehen\n3. Items 4. Pokemon:")
+                                                validInput = false
+                                            }
                                         }
                                     }
+
+                                    2 -> {
+                                        printLetterByLetter("Du bist geflohen!")
+                                        wildePokemon.reset()
+                                        validInput = true
+                                        moveInRegion()
+                                    }
+                                    else -> {
+                                        println()
+                                        println("Ungültige Eingabe! Bitte eine Zahl eingeben")
+                                        println("1. Attacke 2. Fliehen\n3. Items 4. Pokemon:")
+                                        validInput = false
+                                    }
                                 }
-
-                                2 -> {
-                                    printLetterByLetter("Du bist geflohen!")
-                                    wildePokemon.reset()
-                                    moveInRegion()
-
-                                }
-
-                                else -> printLetterByLetter("Ungültige Eingabe! Bitte eine Zahl zwischen 1 und 2 eingeben")
+                            } catch (e: Exception) {
+                                println()
+                                printLetterByLetter("Ungültige Eingabe! Bitte eine Zahl eingeben")
+                                println("1. Attacke 2. Fliehen\n3. Items 4. Pokemon:")
+                                validInput = false
                             }
-                        } catch (e: Exception) {
-                            printLetterByLetter("Ungültige Eingabe! Bitte eine Zahl eingeben")
                         }
+
                         if (wildePokemon.hp > 0) {
                             val wildAttack = wildePokemon.attacke.random()
                             val damage = schaden(wildePokemon, playerPokemon, wildAttack)
-                           println()
+                            println()
                             printLetterByLetter("Wildes ${wildePokemon.name} setzt $wildAttack ein und fügt $damage Schaden zu!")
                             playerPokemon.hp -= damage
                             println()
@@ -128,6 +165,7 @@ class Kanto() {
                     }
                     try {
                         if (playerPokemon.hp < 0) {
+
                             println()
                             printLetterByLetter("${playerPokemon.name} wurde besiegt!")
                             println()
@@ -138,8 +176,12 @@ class Kanto() {
                                 playerPokemon.reset()
                                 wildePokemon.reset()
                                 pokemonAuswahl()
-                            } else if(continueGame)  {
-                                continueGame = false
+
+                            } else if (playerPokemon.lvl == 100) {
+                                println("gewonnen")
+                                return
+                            } else {
+                                return
                             }
                         } else {
                             println()
@@ -158,7 +200,7 @@ class Kanto() {
 
 
     // funktioniert
-    open fun schaden(pokemonAtk: Pokemon, pokeonDef: Pokemon, attackName: PokemonAttacke): Int {
+    fun schaden(pokemonAtk: Pokemon, pokeonDef: Pokemon, attackName: PokemonAttacke): Int {
         val basisSchaden = attackName.schaden
         val schaden = (pokemonAtk.atk * basisSchaden) / pokeonDef.def
         return schaden
@@ -172,19 +214,24 @@ class Kanto() {
         val stepsUntilWildPokemonAppears = (10..50).random()
         for (playerPokemon in trainerPokemon)
 
-            while (continueGame && playerPokemon.hp >= 0) {
+            while (continueGame) {
+
                 steps += (10..20).random()
                 if (steps % stepsUntilWildPokemonAppears == 0) {
                     kampfWildePokemon()
                 } else if (playerPokemon.lvl == 100) {
-                    println("Gewonnen")
+                    return println("Gewonnen")
                     continueGame = false
-                } else {
+
+                } else if (playerPokemon.hp < 0)
+                    return
+                else {
                     printLetterByLetter(".")
                 }
             }
         println()
     }
+
 
     // muss bearbeitet werden oder verlagert werden damit man mit einem pokeball das pokemon einfangen kann
     fun pokemonFangen(wildPokemon: Pokemon, erfolgschance: Int) {
@@ -218,15 +265,15 @@ class Kanto() {
         }
     }
 
-    fun game(){
-        while(continueGame)
+    fun game() {
         pokemonAuswahl()
         moveInRegion()
 
     }
+
     fun newGame(): Boolean {
         trainerPokemon.clear()
-        pokemonAuswahl()
+
         println("Willst du nochmal Zocken? (ja/nein): ")
         val entscheidung = readln().trim().lowercase()
         Thread.sleep(1000)
@@ -234,8 +281,10 @@ class Kanto() {
         when (entscheidung) {
             "ja", "j", "yes", "y" -> {
                 println("Noch eine Runde 👍")
+                pokemonAuswahl()
                 return true
             }
+
             "nein", "n", "no" -> {
                 println("Danke fürs Zocken!!")
                 return false
@@ -248,5 +297,27 @@ class Kanto() {
         }
         return null == true
     }
+
+    fun indexEinlesen(min: Int, max: Int): Int {
+        var index: Int
+
+        do {
+            try {
+                println("Geben sie einen Index ein: (von $min bis $max)")
+                index = readln().toInt()
+            } catch (ex: Exception) {
+                println("Sie haben einen Ungültigen Index eingegeben")
+                println("Probieren sie es nochmal")
+                index = -1000
+                continue
+            }
+            //...
+
+        } while (index !in min..max)
+
+        return index
+    }
+
+
 
 }
