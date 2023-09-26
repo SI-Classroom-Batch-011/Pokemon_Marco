@@ -1,6 +1,7 @@
 package Pokemon
 
 import Attacken.PokemonAttacke
+import Kanto.trainerPokemon
 import PokemonTypen.PokemonType
 
 // pokemon eigenschaften
@@ -35,8 +36,8 @@ open class Pokemon(
 
     open fun lvlUp() {
         hp = 0
-        hp = standartHp
         standartHp += 5
+        hp = standartHp
         atk += 2
         def += 2
         lvl++
@@ -53,4 +54,14 @@ open class Pokemon(
         lvl = 0
         lvl = standartLvl
     }
+
+    fun heilen() {
+
+    }
+    fun pokemonEntwicklung() {
+        if (trainerPokemon.any { it.lvl >= 16 }) {
+
+        }
+    }
+
 }

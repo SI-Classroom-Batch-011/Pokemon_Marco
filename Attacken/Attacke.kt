@@ -157,4 +157,3 @@ enum class PokemonAttacke(val schaden: Int, val typ: PokemonType, val heilung: B
     Wuchtschlag(150, PokemonType.NORMAL)
 }
 
-

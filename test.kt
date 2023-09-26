@@ -5,16 +5,11 @@ import PokemonTypen.PokemonType
 import Trainer.Boss
 
 
-
 fun main() {
 
-
-    /* var kanto = Kanto()
+ var kanto = Kanto()
 
     kanto.game()
 
-
-
-    */
 
 }

@@ -8,7 +8,7 @@ import Pokemon.pokemonList
 // wird eventueller boss werden
 
 
-open class Trainer(var trainerPokemon: MutableList<Pokemon>) {
+open class Trainer( var name : String , var trainerPokemon: MutableList<Pokemon>) {
 
 
 
