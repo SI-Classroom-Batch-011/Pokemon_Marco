@@ -8,7 +8,7 @@ import Pokemon.Pokemon
 import PokemonTypen.PokemonType
 
 // Klasse für den Boss
-class Boss(
+open class Boss(
     var name: String = "Rivale",
     var bossPokemon: MutableList<Pokemon> = mutableListOf(
         Pokemon(
@@ -68,6 +68,7 @@ class Boss(
      * Der Spieler kämpft gegen den Boss, indem er seine Pokémon einsetzt und verschiedene Aktionen wählt, darunter Angriffe,
      * die Verwendung von Items und das Wechseln von Pokémon.
      */
+
     fun bossKampf() {
 
         // Kopie der Spieler-Pokémon erstellen

@@ -376,6 +376,9 @@ open class Kanto() {
     fun game() {
         do {
 
+            // Willkommen Text
+            wilkommen()
+
             // Der Spieler wählt sein Starter-Pokémon aus
             starterPokemonAuswahl()
 
@@ -399,6 +402,55 @@ open class Kanto() {
 
         // Kopie des Trainer-Pokémon-Teams
         var playerPokemon = trainerPokemon
+        // Kopie der Boss Pokemon
+        var bossPokemon = mutableListOf<Pokemon>(Pokemon(
+            "Mewtu",
+            PokemonType.PSYCHO,
+            1,
+            106,
+            110,
+            90,
+            mutableListOf(
+                PokemonAttacke.Konfusion,
+                PokemonAttacke.Psychokinese,
+                PokemonAttacke.Psychoschock,
+                PokemonAttacke.Barriere
+            )
+        ), Pokemon(
+            "Dragoran",
+            PokemonType.DRACHE,
+            1,
+            91,
+            134,
+            95,
+            mutableListOf(
+                PokemonAttacke.Donnerwelle,
+                PokemonAttacke.Ruckzuckhieb,
+                PokemonAttacke.Donner,
+                PokemonAttacke.Wutanfall
+            )
+        ), Pokemon(
+            "Arktos",
+            PokemonType.EIS,
+            50,
+            90,
+            85,
+            100,
+            mutableListOf(PokemonAttacke.Eisstrahl, PokemonAttacke.Blizzard, PokemonAttacke.Flügelschlag)
+        ), Pokemon(
+            "Lavados",
+            PokemonType.FEUER,
+            50,
+            90,
+            100,
+            90,
+            mutableListOf(
+                PokemonAttacke.Glut,
+                PokemonAttacke.Feuerwirbel,
+                PokemonAttacke.Flammenwurf,
+                PokemonAttacke.Flügelschlag
+            )
+        ))
 
         // Abfrage, ob der Spieler ein neues Spiel starten möchte
         println("Willst du nochmal Zocken? (ja/nein): ")
@@ -413,6 +465,7 @@ open class Kanto() {
                 glumanda.reset()
                 shiggy.reset()
                 bisasam.reset()
+                boss.bossPokemon = bossPokemon
                 playerPokemon.clear()
                 return true
             }
@@ -441,5 +494,50 @@ open class Kanto() {
             print(char)
             Thread.sleep(0) // Eine kurze Verzögerung für den Effekt
         }
+    }
+
+    /**
+     * Diese Funktion heißt den Spieler in der Pokémon-Welt von Kanto willkommen und fordert seinen Namen an, um die Reise zu beginnen.
+     *
+     * Die Funktion gibt eine grafische Begrüßungsnachricht aus und fordert den Spieler auf, seinen Namen einzugeben.
+     * Nachdem der Spieler seinen Namen eingegeben hat, wird eine Bestätigungsnachricht angezeigt.
+     */
+    fun wilkommen(){
+
+        // Ausgabe einer grafischen Begrüßungsnachricht
+        printLetterByLetter(
+            """
+                                              ,'\
+    _.----.        ____         ,'  _\   ___    ___     ____
+_,-'       `.     |    |  /`.   \,-'    |   \  /   |   |    \  |`.
+\      __    \    '-.  | /   `.  ___    |    \/    |   '-.   \ |  |
+ \.    \ \   |  __  |  |/    ,','_  `.  |          | __  |    \|  |
+   \    \/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |
+    \     ,-'/  /   \    ,'   | \/ / ,`.|         /  /   \  |     |
+     \    \ |   \_/  |   `-.  \    `'  /|  |    ||   \_/  | |\    |
+      \    \ \      /       `-.`.___,-' |  |\  /| \      /  | |   |
+       \    \ `.__,'|  |`-._    `|      |__| \/ |  `.__,'|  | |   |
+        \_.-'       |__|    `-._ |              '-.|     '-.| |   |
+                                `'                            '-._|
+        """.trimIndent())
+        println()
+        Thread.sleep(100)
+        println()
+        Thread.sleep(100)
+        println()
+        Thread.sleep(100)
+        println()
+
+
+        printLetterByLetter("🌍🌎Willkommen in der Pokemon Welt von Kanto🌍🌎\n")
+        printLetterByLetter("Wie ist dein Name ?\n")
+
+        // Eingabe des Spielernamens
+        var inputName = readln()
+
+        // Bestätigungsnachricht für den eingegebenen Namen
+        printLetterByLetter("$inputName hört sich nach einem Namen an für einen Pokemon Meister\n")
+        printLetterByLetter("Um deine Reise zu beginnen brauchst du zuerst ein Pokemon\n")
+        return
     }
 }
