@@ -4,6 +4,6 @@ import Kanto.trainerPokemon
 import Pokemon.Pokemon
 
 
-// Items zum fangen und heilen von pokemon
- open class Items() {
+// Klassen für Items
+open class Items() {
 }

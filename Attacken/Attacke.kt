@@ -2,8 +2,13 @@ package Attacken
 
 import PokemonTypen.PokemonType
 
-
-enum class PokemonAttacke(val schaden: Int, val typ: PokemonType, val heilung: Boolean = false, val heilungWert: Int = 0) {
+// Enum Klasse für die Attacken
+enum class PokemonAttacke(
+    val schaden: Int,
+    val typ: PokemonType,
+    val heilung: Boolean = false,
+    val heilungWert: Int = 0
+) {
     Absorb(20, PokemonType.PFLANZE, true, 50),
     Säure(40, PokemonType.GIFT),
     Säurepanzer(0, PokemonType.GIFT),

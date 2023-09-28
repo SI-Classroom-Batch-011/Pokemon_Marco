@@ -1,5 +1,6 @@
 package PokemonTypen
-// Typen aller pokemon
+
+// Klasse für Typen aller Pokemon
 enum class PokemonType {
     NORMAL,
     FEUER,

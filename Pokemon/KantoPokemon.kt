@@ -3,7 +3,8 @@ package Pokemon
 import Attacken.PokemonAttacke
 import PokemonTypen.PokemonType
 
-// liste aller pokemon
+// Liste aller 151 Pokemon der ersten Generation
+
 var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Bisasam",
@@ -272,11 +273,16 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
         70,
         62,
         67,
-        mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke, PokemonAttacke.Toxin)
+        mutableListOf(
+            PokemonAttacke.Giftstachel,
+            PokemonAttacke.Hornattacke,
+            PokemonAttacke.Toxin
+        )
     ),
     Pokemon(
         "Nidoqueen",
-        PokemonType.GIFT, 36,
+        PokemonType.GIFT,
+        1,
         90,
         92,
         87,
@@ -290,16 +296,19 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Nidoran♂",
         PokemonType.GIFT,
-        16,
+        1,
         46,
         57,
         40,
-        mutableListOf(PokemonAttacke.Giftstachel, PokemonAttacke.Hornattacke)
+        mutableListOf(
+            PokemonAttacke.Giftstachel,
+            PokemonAttacke.Hornattacke
+        )
     ),
     Pokemon(
         "Nidorino",
         PokemonType.GIFT,
-        35,
+        1,
         61,
         72,
         57,
@@ -308,7 +317,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Nidoking",
         PokemonType.GIFT,
-        35,
+        1,
         81,
         102,
         77,
@@ -322,7 +331,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Piepi",
         PokemonType.FEE,
-        18,
+        1,
         70,
         45,
         48,
@@ -331,7 +340,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Pixi",
         PokemonType.FEE,
-        32,
+        1,
         95,
         70,
         73,
@@ -358,7 +367,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Pummeluff",
         PokemonType.NORMAL,
-        12,
+        1,
         115,
         45,
         1,
@@ -367,7 +376,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Knuddeluff",
         PokemonType.NORMAL,
-        12,
+        1,
         140,
         70,
         45,
@@ -376,7 +385,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Zubat",
         PokemonType.GIFT,
-        6,
+        1,
         40,
         45,
         35,
@@ -385,7 +394,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Golbat",
         PokemonType.GIFT,
-        16,
+        1,
         75,
         80,
         70,
@@ -394,7 +403,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Myrapla",
         PokemonType.PFLANZE,
-        6,
+        1,
         45,
         50,
         55,
@@ -403,7 +412,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Duflor",
         PokemonType.PFLANZE,
-        21,
+        1,
         60,
         65,
         70,
@@ -412,7 +421,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Giflor",
         PokemonType.PFLANZE,
-        42,
+        1,
         75,
         80,
         85,
@@ -430,7 +439,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Parasek",
         PokemonType.KAEFER,
-        24,
+        1,
         60,
         95,
         80,
@@ -439,7 +448,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Bluzuk",
         PokemonType.GIFT,
-        8,
+        1,
         40,
         50,
         40,
@@ -448,7 +457,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Omot",
         PokemonType.GIFT,
-        18,
+        1,
         65,
         65,
         65,
@@ -457,7 +466,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Digda",
         PokemonType.BODEN,
-        4,
+        1,
         1,
         55,
         25,
@@ -466,17 +475,17 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Digdri",
         PokemonType.BODEN,
-        18,
+        1,
         35,
         80,
         50,
         mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Schaufler, PokemonAttacke.Erdbeben)
     ),
-    Pokemon("Mauzi", PokemonType.NORMAL, 4, 40, 45, 35, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Biss)),
+    Pokemon("Mauzi", PokemonType.NORMAL, 1, 40, 45, 35, mutableListOf(PokemonAttacke.Kratzer, PokemonAttacke.Biss)),
     Pokemon(
         "Snobilikat",
         PokemonType.NORMAL,
-        14,
+        1,
         65,
         70,
         60,
@@ -485,7 +494,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Enton",
         PokemonType.WASSER,
-        4,
+        1,
         50,
         52,
         48,
@@ -494,7 +503,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Entoron",
         PokemonType.WASSER,
-        18,
+        1,
         80,
         82,
         78,
@@ -512,7 +521,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Rasaff",
         PokemonType.KAMPF,
-        28,
+        1,
         65,
         105,
         60,
@@ -521,7 +530,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Fukano",
         PokemonType.FEUER,
-        12,
+        1,
         55,
         70,
         45,
@@ -530,7 +539,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Arkani",
         PokemonType.FEUER,
-        36,
+        1,
         90,
         110,
         80,
@@ -539,7 +548,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Quapsel",
         PokemonType.WASSER,
-        16,
+        1,
         50,
         40,
         40,
@@ -548,7 +557,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Quaputzi",
         PokemonType.WASSER,
-        36,
+        1,
         65,
         65,
         65,
@@ -557,7 +566,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Quappo",
         PokemonType.WASSER,
-        36,
+        1,
         80,
         85,
         95,
@@ -572,7 +581,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Kadabra",
         PokemonType.PSYCHO,
-        36,
+        1,
         40,
         35,
         30,
@@ -581,7 +590,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Simsala",
         PokemonType.PSYCHO,
-        16,
+        1,
         55,
         50,
         45,
@@ -590,7 +599,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Machollo",
         PokemonType.KAMPF,
-        28,
+        1,
         70,
         80,
         50,
@@ -599,7 +608,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Maschock",
         PokemonType.KAMPF,
-        36,
+        1,
         80,
         100,
         70,
@@ -608,7 +617,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Machomei",
         PokemonType.KAMPF,
-        40,
+        1,
         90,
         130,
         80,
@@ -622,7 +631,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Knofensa",
         PokemonType.PFLANZE,
-        21,
+        1,
         45,
         50,
         55,
@@ -631,7 +640,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Ultrigaria",
         PokemonType.PFLANZE,
-        36,
+        1,
         60,
         65,
         70,
@@ -640,7 +649,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Sarzenia",
         PokemonType.PFLANZE,
-        48,
+        1,
         75,
         100,
         85,
@@ -649,7 +658,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Tentacha",
         PokemonType.WASSER,
-        30,
+        1,
         40,
         50,
         100,
@@ -658,7 +667,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Tentoxa",
         PokemonType.WASSER,
-        36,
+        1,
         80,
         70,
         120,
@@ -667,7 +676,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Kleinstein",
         PokemonType.GESTEIN,
-        40,
+        1,
         40,
         80,
         100,
@@ -676,7 +685,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Georok",
         PokemonType.GESTEIN,
-        40,
+        1,
         55,
         95,
         115,
@@ -685,7 +694,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Geowaz",
         PokemonType.GESTEIN,
-        40,
+        1,
         80,
         120,
         130,
@@ -708,7 +717,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Gallopa",
         PokemonType.FEUER,
-        40,
+        1,
         65,
         100,
         70,
@@ -717,7 +726,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Flegmon",
         PokemonType.WASSER,
-        31,
+        1,
         50,
         75,
         40,
@@ -726,7 +735,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Lahmus",
         PokemonType.WASSER,
-        32,
+        1,
         80,
         100,
         70,
@@ -735,7 +744,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Magnetilo",
         PokemonType.ELEKTRO,
-        30,
+        1,
         25,
         35,
         70,
@@ -744,7 +753,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Magneton",
         PokemonType.ELEKTRO,
-        30,
+        1,
         50,
         60,
         95,
@@ -762,7 +771,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Dodu",
         PokemonType.NORMAL,
-        14,
+        1,
         35,
         85,
         45,
@@ -771,7 +780,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Dodri",
         PokemonType.NORMAL,
-        34,
+        1,
         60,
         110,
         70,
@@ -781,7 +790,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Jugong",
         PokemonType.WASSER,
-        38,
+        1,
         90,
         65,
         180,
@@ -790,7 +799,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Sleima",
         PokemonType.GIFT,
-        30,
+        1,
         40,
         65,
         100,
@@ -817,7 +826,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Austos",
         PokemonType.WASSER,
-        40,
+        1,
         60,
         85,
         75,
@@ -826,7 +835,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Nebulak",
         PokemonType.GEIST,
-        25,
+        1,
         45,
         50,
         45,
@@ -835,7 +844,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Alpollo",
         PokemonType.GEIST,
-        38,
+        1,
         60,
         65,
         60,
@@ -844,7 +853,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Gengar",
         PokemonType.GEIST,
-        45,
+        1,
         60,
         65,
         60,
@@ -858,7 +867,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Onix",
         PokemonType.GESTEIN,
-        35,
+        1,
         35,
         45,
         160,
@@ -868,7 +877,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Hypno",
         PokemonType.PSYCHO,
-        32,
+        1,
         85,
         73,
         70,
@@ -886,7 +895,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Kingler",
         PokemonType.WASSER,
-        40,
+        1,
         55,
         130,
         115,
@@ -895,7 +904,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Voltobal",
         PokemonType.ELEKTRO,
-        30,
+        1,
         40,
         30,
         50,
@@ -904,7 +913,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Lektroball",
         PokemonType.ELEKTRO,
-        30,
+        1,
         60,
         50,
         70,
@@ -913,7 +922,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Owei",
         PokemonType.PFLANZE,
-        28,
+        1,
         45,
         25,
         50,
@@ -922,7 +931,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Kokowei",
         PokemonType.PFLANZE,
-        40,
+        1,
         95,
         80,
         85,
@@ -931,7 +940,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Tragosso",
         PokemonType.GESTEIN,
-        30,
+        1,
         50,
         65,
         107,
@@ -940,7 +949,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Knogga",
         PokemonType.BODEN,
-        40,
+        1,
         60,
         80,
         110,
@@ -950,7 +959,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Nockchan",
         PokemonType.KAMPF,
-        28,
+        1,
         50,
         105,
         79,
@@ -959,7 +968,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Schlurp",
         PokemonType.NORMAL,
-        30,
+        1,
         48,
         55,
         45,
@@ -968,7 +977,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Smogon",
         PokemonType.GIFT,
-        35,
+        1,
         40,
         65,
         95,
@@ -982,7 +991,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Smogmog",
         PokemonType.GIFT,
-        35,
+        1,
         65,
         90,
         120,
@@ -1005,7 +1014,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Rizeros",
         PokemonType.BODEN,
-        40,
+        1,
         105,
         130,
         120,
@@ -1014,7 +1023,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Chaneira",
         PokemonType.NORMAL,
-        25,
+        1,
         250,
         5,
         5,
@@ -1023,7 +1032,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Tangela",
         PokemonType.PFLANZE,
-        30,
+        1,
         65,
         55,
         115,
@@ -1032,7 +1041,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Kangama",
         PokemonType.NORMAL,
-        30,
+        1,
         105,
         95,
         80,
@@ -1041,7 +1050,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Seeper",
         PokemonType.GIFT,
-        12,
+        1,
         35,
         40,
         70,
@@ -1050,7 +1059,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Seemon",
         PokemonType.GIFT,
-        32,
+        1,
         65,
         75,
         100,
@@ -1059,7 +1068,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Goldini",
         PokemonType.WASSER,
-        33,
+        1,
         45,
         67,
         60,
@@ -1068,7 +1077,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Golking",
         PokemonType.WASSER,
-        33,
+        1,
         80,
         92,
         65,
@@ -1077,7 +1086,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Sterndu",
         PokemonType.WASSER,
-        30,
+        1,
         30,
         45,
         55,
@@ -1086,7 +1095,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Starmie",
         PokemonType.WASSER,
-        30,
+        1,
         60,
         75,
         85,
@@ -1095,7 +1104,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Pantimos",
         PokemonType.NORMAL,
-        30,
+        1,
         40,
         45,
         65,
@@ -1104,7 +1113,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Sichlor",
         PokemonType.KAEFER,
-        24,
+        1,
         70,
         110,
         80,
@@ -1113,7 +1122,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Rossana",
         PokemonType.NORMAL,
-        30,
+        1,
         65,
         60,
         75,
@@ -1127,7 +1136,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Elektek",
         PokemonType.ELEKTRO,
-        30,
+        1,
         65,
         83,
         57,
@@ -1136,7 +1145,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Magmar",
         PokemonType.FEUER,
-        30,
+        1,
         65,
         95,
         57,
@@ -1145,7 +1154,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Pinsir",
         PokemonType.KAEFER,
-        40,
+        1,
         65,
         125,
         100,
@@ -1159,7 +1168,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Tauros",
         PokemonType.NORMAL,
-        30,
+        1,
         75,
         100,
         95,
@@ -1188,7 +1197,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Lapras",
         PokemonType.WASSER,
-        44,
+        1,
         130,
         85,
         95,
@@ -1212,7 +1221,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Aquana",
         PokemonType.WASSER,
-        45,
+        1,
         130,
         65,
         60,
@@ -1221,7 +1230,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Blitza",
         PokemonType.ELEKTRO,
-        45,
+        1,
         65,
         130,
         60,
@@ -1230,7 +1239,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Flamara",
         PokemonType.FEUER,
-        45,
+        1,
         65,
         60,
         130,
@@ -1240,7 +1249,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Amonitas",
         PokemonType.GESTEIN,
-        40,
+        1,
         35,
         40,
         100,
@@ -1249,7 +1258,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Amoroso",
         PokemonType.GESTEIN,
-        40,
+        1,
         70,
         60,
         125,
@@ -1258,7 +1267,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Kabuto",
         PokemonType.GESTEIN,
-        40,
+        1,
         30,
         80,
         55,
@@ -1267,7 +1276,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Kabutops",
         PokemonType.GESTEIN,
-        40,
+        1,
         60,
         115,
         65,
@@ -1281,7 +1290,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Aerodactyl",
         PokemonType.GESTEIN,
-        40,
+        1,
         80,
         105,
         65,
@@ -1295,7 +1304,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Relaxo",
         PokemonType.NORMAL,
-        30,
+        1,
         160,
         110,
         65,
@@ -1309,7 +1318,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Arktos",
         PokemonType.EIS,
-        50,
+        1,
         90,
         85,
         100,
@@ -1318,7 +1327,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Zapdos",
         PokemonType.ELEKTRO,
-        50,
+        1,
         90,
         90,
         85,
@@ -1332,7 +1341,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Lavados",
         PokemonType.FEUER,
-        50,
+        1,
         90,
         100,
         90,
@@ -1346,7 +1355,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Dratini",
         PokemonType.DRACHE,
-        35,
+        1,
         41,
         64,
         45,
@@ -1355,7 +1364,7 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
     Pokemon(
         "Dragonir",
         PokemonType.DRACHE,
-        55,
+        1,
         61,
         84,
         65,
@@ -1407,6 +1416,4 @@ var pokemonList: MutableList<Pokemon> = mutableListOf(
 
 )
 
-fun getPokemonByLevelRange(minLevel: Int, maxLevel: Int): List<Pokemon> {
-    return pokemonList.filter { it.lvl in minLevel..maxLevel }
-}
+

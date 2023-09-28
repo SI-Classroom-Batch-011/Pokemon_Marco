@@ -5,12 +5,8 @@ import Attacken.PokemonAttacke
 import Pokemon.Pokemon
 import Pokemon.pokemonList
 
-// wird eventueller boss werden
-
-
-open class Trainer( var name : String , var trainerPokemon: MutableList<Pokemon>) {
-
-
-
+// Für später Zwecke verwendbar
+// Klasse für den Trainer
+open class Trainer(var name: String, var trainerPokemon: MutableList<Pokemon>) {
 
 }
