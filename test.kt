@@ -9,7 +9,6 @@ import Trainer.Boss
 fun main() {
 
  var kanto = Kanto()
-
     kanto.game()
 
 

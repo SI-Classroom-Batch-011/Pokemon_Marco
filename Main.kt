@@ -6,7 +6,6 @@ var millis50 : Long = 50
 var millis100 : Long = 100
 
 fun main(){
-   var kantoo = Kanto()
-
-    kantoo.game()
+   var kanto = Kanto()
+    kanto.game()
 }
